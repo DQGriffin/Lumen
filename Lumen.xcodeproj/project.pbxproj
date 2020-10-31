@@ -14,7 +14,6 @@
 		8535E131254B925100DA98BE /* MagicLightViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8535E130254B925100DA98BE /* MagicLightViewModel.swift */; };
 		8535E136254B931900DA98BE /* LightAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8535E135254B931900DA98BE /* LightAction.swift */; };
 		85F9E8DF25435EB500D01C6E /* LumenApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F9E8DE25435EB500D01C6E /* LumenApp.swift */; };
-		85F9E8E125435EB500D01C6E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F9E8E025435EB500D01C6E /* ContentView.swift */; };
 		85F9E8E325435EB600D01C6E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85F9E8E225435EB600D01C6E /* Assets.xcassets */; };
 		85F9E8E625435EB600D01C6E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85F9E8E525435EB600D01C6E /* Preview Assets.xcassets */; };
 		85F9E8E825435EB600D01C6E /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F9E8E725435EB600D01C6E /* Persistence.swift */; };
@@ -49,7 +48,6 @@
 		8535E135254B931900DA98BE /* LightAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightAction.swift; sourceTree = "<group>"; };
 		85F9E8DB25435EB500D01C6E /* Lumen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lumen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85F9E8DE25435EB500D01C6E /* LumenApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LumenApp.swift; sourceTree = "<group>"; };
-		85F9E8E025435EB500D01C6E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		85F9E8E225435EB600D01C6E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		85F9E8E525435EB600D01C6E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		85F9E8E725435EB600D01C6E /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -101,7 +99,6 @@
 		851416AB25436021001CC01A /* View */ = {
 			isa = PBXGroup;
 			children = (
-				85F9E8E025435EB500D01C6E /* ContentView.swift */,
 				8535E126254B893200DA98BE /* MagicLightView.swift */,
 				8535E12B254B8BE600DA98BE /* MagicLightButtonView.swift */,
 			);
@@ -316,7 +313,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				85F9E8E825435EB600D01C6E /* Persistence.swift in Sources */,
-				85F9E8E125435EB500D01C6E /* ContentView.swift in Sources */,
 				8535E131254B925100DA98BE /* MagicLightViewModel.swift in Sources */,
 				85F9E8DF25435EB500D01C6E /* LumenApp.swift in Sources */,
 				8535E136254B931900DA98BE /* LightAction.swift in Sources */,
