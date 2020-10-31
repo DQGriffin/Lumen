@@ -13,6 +13,9 @@ struct MagicLightView: View {
     
     var body: some View {
         ScrollView {
+            Text("Lumen")
+                .font(.title)
+                .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
             LazyVGrid(columns: [.init(), .init()]) {
                 ForEach(viewModel.actions) {action in
                     MagicLightButtonView(title: action.title, description: action.description)
