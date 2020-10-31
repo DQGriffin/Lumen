@@ -24,9 +24,7 @@ class MagicLightViewModel {
     }
     
     func setBrightness(to targetBrightness: String) {
-        print("Setting brightness to \(targetBrightness)")
         let brightness = targetBrightness.replacingOccurrences(of: "%", with: "")
-        print("Extracted: \(brightness)")
         let data = Data(bytes: [getAdjustedBrightnessValue(from: Int.init(brightness)!)], count: 1)
         magicLightManager.setBrightness(to: data)
     }
