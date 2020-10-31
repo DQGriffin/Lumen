@@ -8,13 +8,11 @@
 import SwiftUI
 
 struct MagicLightButtonView: View {
-    
-    let title: String
-    let description: String
+    let action: LightAction
     
     var body: some View {
-        GroupBox(label: Label(title, systemImage:  "lightbulb.fill").foregroundColor(.blue)) {
-            Text(description)
+        GroupBox(label: Label(action.title, systemImage:  "lightbulb.fill").foregroundColor(.blue)) {
+            Text(action.description)
         }
         .groupBoxStyle(DefaultGroupBoxStyle())
     }
@@ -22,6 +20,8 @@ struct MagicLightButtonView: View {
 
 struct MagicLightButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        MagicLightButtonView(title: "Pure White", description: "75%")
+        MagicLightButtonView(action: LightAction(title: "MagicLight", description: "15%", action: { _ in
+            print("Happy now, Xcode?")
+        }))
     }
 }

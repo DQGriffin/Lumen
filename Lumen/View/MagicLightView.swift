@@ -18,7 +18,7 @@ struct MagicLightView: View {
                 .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
             LazyVGrid(columns: [.init(), .init()]) {
                 ForEach(viewModel.actions) {action in
-                    MagicLightButtonView(title: action.title, description: action.description)
+                    MagicLightButtonView(action: action)
                         .onTapGesture(count: /*@START_MENU_TOKEN@*/1/*@END_MENU_TOKEN@*/, perform: {
                             action.action(action.description)
                         })
