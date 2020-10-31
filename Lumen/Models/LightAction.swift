@@ -12,6 +12,7 @@ struct LightAction: Identifiable {
     let title: String
     let description: String
     let action: (String) -> Void
+    var isActive = false
     
     init(title: String, description: String, action: @escaping (String) -> Void) {
         self.title = title
