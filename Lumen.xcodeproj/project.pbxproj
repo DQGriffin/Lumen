@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8535E11D254B84D700DA98BE /* MagicLight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8535E11C254B84D700DA98BE /* MagicLight.swift */; };
+		8535E122254B85D900DA98BE /* MagicLightManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8535E121254B85D900DA98BE /* MagicLightManager.swift */; };
+		8535E127254B893200DA98BE /* MagicLightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8535E126254B893200DA98BE /* MagicLightView.swift */; };
+		8535E12C254B8BE600DA98BE /* MagicLightButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8535E12B254B8BE600DA98BE /* MagicLightButtonView.swift */; };
+		8535E131254B925100DA98BE /* MagicLightViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8535E130254B925100DA98BE /* MagicLightViewModel.swift */; };
+		8535E136254B931900DA98BE /* LightAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8535E135254B931900DA98BE /* LightAction.swift */; };
 		85F9E8DF25435EB500D01C6E /* LumenApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F9E8DE25435EB500D01C6E /* LumenApp.swift */; };
 		85F9E8E125435EB500D01C6E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F9E8E025435EB500D01C6E /* ContentView.swift */; };
 		85F9E8E325435EB600D01C6E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85F9E8E225435EB600D01C6E /* Assets.xcassets */; };
@@ -35,6 +41,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8535E11C254B84D700DA98BE /* MagicLight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicLight.swift; sourceTree = "<group>"; };
+		8535E121254B85D900DA98BE /* MagicLightManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicLightManager.swift; sourceTree = "<group>"; };
+		8535E126254B893200DA98BE /* MagicLightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicLightView.swift; sourceTree = "<group>"; };
+		8535E12B254B8BE600DA98BE /* MagicLightButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicLightButtonView.swift; sourceTree = "<group>"; };
+		8535E130254B925100DA98BE /* MagicLightViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicLightViewModel.swift; sourceTree = "<group>"; };
+		8535E135254B931900DA98BE /* LightAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightAction.swift; sourceTree = "<group>"; };
 		85F9E8DB25435EB500D01C6E /* Lumen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lumen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85F9E8DE25435EB500D01C6E /* LumenApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LumenApp.swift; sourceTree = "<group>"; };
 		85F9E8E025435EB500D01C6E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -76,6 +88,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		851416AA25436017001CC01A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8535E11C254B84D700DA98BE /* MagicLight.swift */,
+				8535E121254B85D900DA98BE /* MagicLightManager.swift */,
+				8535E135254B931900DA98BE /* LightAction.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		851416AB25436021001CC01A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				85F9E8E025435EB500D01C6E /* ContentView.swift */,
+				8535E126254B893200DA98BE /* MagicLightView.swift */,
+				8535E12B254B8BE600DA98BE /* MagicLightButtonView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		851416AC25436028001CC01A /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				8535E130254B925100DA98BE /* MagicLightViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		851416AD25436049001CC01A /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				85F9E8E725435EB600D01C6E /* Persistence.swift */,
+				85F9E8E925435EB600D01C6E /* Lumen.xcdatamodeld */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		85F9E8D225435EB500D01C6E = {
 			isa = PBXGroup;
 			children = (
@@ -99,12 +148,13 @@
 		85F9E8DD25435EB500D01C6E /* Lumen */ = {
 			isa = PBXGroup;
 			children = (
+				851416AD25436049001CC01A /* CoreData */,
+				851416AA25436017001CC01A /* Models */,
+				851416AB25436021001CC01A /* View */,
+				851416AC25436028001CC01A /* ViewModels */,
 				85F9E8DE25435EB500D01C6E /* LumenApp.swift */,
-				85F9E8E025435EB500D01C6E /* ContentView.swift */,
 				85F9E8E225435EB600D01C6E /* Assets.xcassets */,
-				85F9E8E725435EB600D01C6E /* Persistence.swift */,
 				85F9E8EC25435EB600D01C6E /* Info.plist */,
-				85F9E8E925435EB600D01C6E /* Lumen.xcdatamodeld */,
 				85F9E8E425435EB600D01C6E /* Preview Content */,
 			);
 			path = Lumen;
@@ -267,7 +317,13 @@
 			files = (
 				85F9E8E825435EB600D01C6E /* Persistence.swift in Sources */,
 				85F9E8E125435EB500D01C6E /* ContentView.swift in Sources */,
+				8535E131254B925100DA98BE /* MagicLightViewModel.swift in Sources */,
 				85F9E8DF25435EB500D01C6E /* LumenApp.swift in Sources */,
+				8535E136254B931900DA98BE /* LightAction.swift in Sources */,
+				8535E11D254B84D700DA98BE /* MagicLight.swift in Sources */,
+				8535E122254B85D900DA98BE /* MagicLightManager.swift in Sources */,
+				8535E12C254B8BE600DA98BE /* MagicLightButtonView.swift in Sources */,
+				8535E127254B893200DA98BE /* MagicLightView.swift in Sources */,
 				85F9E8EB25435EB600D01C6E /* Lumen.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

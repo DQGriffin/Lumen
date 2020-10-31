@@ -13,7 +13,7 @@ struct LumenApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MagicLightView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
