@@ -10,6 +10,7 @@ import Foundation
 class MagicLightViewModel {
     var actions: [LightAction]
     let magicLightManager = MagicLightManager()
+    var currentBrightnessValue = 0
     
     init() { 
         actions = [LightAction]()
@@ -25,8 +26,10 @@ class MagicLightViewModel {
     
     func setBrightness(to targetBrightness: String) {
         let brightness = targetBrightness.replacingOccurrences(of: "%", with: "")
-        let data = Data(bytes: [getAdjustedBrightnessValue(from: Int.init(brightness)!)], count: 1)
+        let adjustedBrightness = getAdjustedBrightnessValue(from: Int.init(brightness)!)
+        let data = Data(bytes: [adjustedBrightness], count: 1)
         magicLightManager.setBrightness(to: data)
+        currentBrightnessValue = adjustedBrightness
     }
     
     func getAdjustedBrightnessValue(from value: Int) -> Int {
