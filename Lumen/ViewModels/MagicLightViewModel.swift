@@ -23,10 +23,6 @@ class MagicLightViewModel {
         actions.append(LightAction(title: "Magic Light", description: "100%", action: setBrightness))
     }
     
-    func sayHello() {
-        print("Hello")
-    }
-    
     func setBrightness(to targetBrightness: String) {
         print("Setting brightness to \(targetBrightness)")
         let brightness = targetBrightness.replacingOccurrences(of: "%", with: "")
