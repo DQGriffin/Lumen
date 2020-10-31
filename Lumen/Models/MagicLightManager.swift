@@ -70,7 +70,6 @@ extension MagicLightManager: CBCentralManagerDelegate {
     
     func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
         peripheral.discoverServices(nil)
-        print("Connected to light")
     }
     
 }
@@ -94,7 +93,6 @@ extension MagicLightManager: CBPeripheralDelegate {
     func storeBrightnessCharacteristic() {
         for characteristic in characteristics {
             if characteristic.uuid == CBUUID(string: "FFEA") {
-                print("Found brightness characteristic")
                 brightnessCharacteristic = characteristic
             }
         }
@@ -102,11 +100,7 @@ extension MagicLightManager: CBPeripheralDelegate {
     
     func setBrightness(to brightness: Data) {
         if let safeBrightnessCharacteristic = brightnessCharacteristic {
-            print("Setting brightness")
             peripheral.writeValue(brightness, for: safeBrightnessCharacteristic, type: CBCharacteristicWriteType.withResponse)
-        }
-        else {
-            print("Couldn't set brightness")
         }
     }
     
