@@ -13,8 +13,7 @@ class MagicLightViewModel {
     
     let hexMap = ["0": 0x0, "3": 0x8, "10": 0x19, "30": 0x4D, "60": 0x99, "100": 0xFF]
     
-    init() {
-        print("Initializing view model")
+    init() { 
         actions = [LightAction]()
         actions.append(LightAction(title: "Magic Light", description: "0%", action: setBrightness))
         actions.append(LightAction(title: "Magic Light", description: "3%", action: setBrightness))
