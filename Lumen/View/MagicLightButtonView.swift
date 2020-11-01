@@ -11,8 +11,9 @@ struct MagicLightButtonView: View {
     let action: LightAction
     
     var body: some View {
-        GroupBox(label: Label(action.title, systemImage:  "lightbulb.fill").foregroundColor(.blue)) {
+        GroupBox(label: Label(action.title, systemImage:  "lightbulb.fill").foregroundColor(action.isActive ? .yellow : .blue)) {
             Text(action.description)
+                .foregroundColor(action.isActive ? .yellow : .init(UIColor.label))
         }
         .groupBoxStyle(DefaultGroupBoxStyle())
     }
