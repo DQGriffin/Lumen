@@ -38,7 +38,6 @@ class MagicLightViewModel: ObservableObject {
     func setActionActive(withDescription description: String) {
         for index in 0..<actions.count {
             if actions[index].description == description {
-                print("Mutated")
                 actions[index].isActive = true
             }
             else {
