@@ -7,7 +7,7 @@
 
 import Foundation
 
-class MagicLightViewModel {
+class MagicLightViewModel: ObservableObject {
     var actions: [LightAction]
     let magicLightManager = MagicLightManager()
     var currentBrightnessValue = 0
@@ -30,6 +30,20 @@ class MagicLightViewModel {
         let data = Data(bytes: [adjustedBrightness], count: 1)
         magicLightManager.setBrightness(to: data)
         currentBrightnessValue = adjustedBrightness
+        setActionActive(withDescription: targetBrightness)
+    }
+    
+    func setActionActive(withDescription description: String) {
+        for index in 0..<actions.count {
+            if actions[index].description == description {
+                print("Mutated")
+                actions[index].isActive = true
+            }
+            else {
+                actions[index].isActive = false
+            }
+            objectWillChange.send()
+        }
     }
     
     func getAdjustedBrightnessValue(from value: Int) -> Int {
