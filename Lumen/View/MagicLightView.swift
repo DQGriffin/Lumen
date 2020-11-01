@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MagicLightView: View {
     
-    let viewModel = MagicLightViewModel()
+    @StateObject var viewModel = MagicLightViewModel()
     
     var body: some View {
         ScrollView {
