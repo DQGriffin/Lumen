@@ -6,11 +6,12 @@
 //
 
 import Foundation
+import SwiftUI
 
 class MagicLightViewModel: ObservableObject {
     var actions: [LightAction]
     let magicLightManager = MagicLightManager()
-    var currentBrightnessValue = 0
+    @AppStorage("brightness") var currentBrightnessValue = 0
     
     init() { 
         actions = [LightAction]()
@@ -22,6 +23,7 @@ class MagicLightViewModel: ObservableObject {
         actions.append(LightAction(title: "Magic Light", description: "30%", action: setBrightness))
         actions.append(LightAction(title: "Magic Light", description: "60%", action: setBrightness))
         actions.append(LightAction(title: "Magic Light", description: "100%", action: setBrightness))
+        setActionActive(withDescription: String("\(currentBrightnessValue)%"))
     }
     
     func setBrightness(to targetBrightness: String) {
@@ -29,7 +31,7 @@ class MagicLightViewModel: ObservableObject {
         let adjustedBrightness = getAdjustedBrightnessValue(from: Int.init(brightness)!)
         let data = Data(bytes: [adjustedBrightness], count: 1)
         magicLightManager.setBrightness(to: data)
-        currentBrightnessValue = adjustedBrightness
+        currentBrightnessValue = Int.init(brightness)!
         setActionActive(withDescription: targetBrightness)
     }
     
