@@ -15,11 +15,11 @@ struct MagicLightView: View {
         ScrollView {
             Text("Lumen")
                 .font(.title)
-                .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                .fontWeight(.bold)
             LazyVGrid(columns: [.init(), .init()]) {
                 ForEach(viewModel.actions) {action in
                     MagicLightButtonView(action: action)
-                        .onTapGesture(count: /*@START_MENU_TOKEN@*/1/*@END_MENU_TOKEN@*/, perform: {
+                        .onTapGesture(count: 1, perform: {
                             action.action(action.description)
                         })
                 }
