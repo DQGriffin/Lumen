@@ -61,5 +61,6 @@ class MagicLightViewModel: ObservableObject {
 extension MagicLightViewModel: MagicLightManagerDelegate {
     func magicLightManager(didChangeConnectionStatusTo status: ConnectionStatus) {
         connectionStatus = status
+        objectWillChange.send()
     }
 }
