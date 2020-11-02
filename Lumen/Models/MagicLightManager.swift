@@ -17,6 +17,7 @@ class MagicLightManager: NSObject {
     var peripheral: CBPeripheral!
     var characteristics: [CBCharacteristic] = []
     var brightnessCharacteristic: CBCharacteristic?
+    var delegate: MagicLightManagerDelegate?
     
     override init() {
         super.init()
@@ -69,7 +70,14 @@ extension MagicLightManager: CBCentralManagerDelegate {
     }
     
     func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
+        delegate?.magicLightManager(didChangeConnectionStatusTo: .connected)
         peripheral.discoverServices(nil)
+    }
+    
+    func centralManager(_ central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: Error?) {
+        if peripheral.name == targetPeripheralName {
+            delegate?.magicLightManager(didChangeConnectionStatusTo: .disconnected)
+        }
     }
     
 }
@@ -110,4 +118,14 @@ extension MagicLightManager: CBPeripheralDelegate {
             print(characteristic)
         }
     }
+}
+
+// MARK: - MagicLightManagerDelegate
+protocol MagicLightManagerDelegate {
+    func magicLightManager(didChangeConnectionStatusTo status: ConnectionStatus)
+}
+
+enum ConnectionStatus {
+    case connected
+    case disconnected
 }

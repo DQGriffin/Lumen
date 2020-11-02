@@ -11,10 +11,12 @@ import SwiftUI
 class MagicLightViewModel: ObservableObject {
     var actions: [LightAction]
     let magicLightManager = MagicLightManager()
+    var connectionStatus: ConnectionStatus = .disconnected
     @AppStorage("brightness") var currentBrightnessValue = 0
     
     init() { 
         actions = [LightAction]()
+        magicLightManager.delegate = self
         actions.append(LightAction(title: "Magic Light", description: "0%", action: setBrightness))
         actions.append(LightAction(title: "Magic Light", description: "3%", action: setBrightness))
         actions.append(LightAction(title: "Magic Light", description: "5%", action: setBrightness))
@@ -53,4 +55,11 @@ class MagicLightViewModel: ObservableObject {
         return adjustedValue
     }
     
+}
+
+// MARK: - MagicLightManagerDelegate
+extension MagicLightViewModel: MagicLightManagerDelegate {
+    func magicLightManager(didChangeConnectionStatusTo status: ConnectionStatus) {
+        connectionStatus = status
+    }
 }
