@@ -16,6 +16,7 @@ struct MagicLightButtonView: View {
         }
         .groupBoxStyle(DefaultGroupBoxStyle())
         .overlay(action.isActive ? ButtonViewOverlay() : nil)
+        .animation(.easeInOut)
     }
 }
 
