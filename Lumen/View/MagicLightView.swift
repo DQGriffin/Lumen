@@ -13,11 +13,21 @@ struct MagicLightView: View {
     
     var body: some View {
         ScrollView {
-            Text("Lumen")
-                .font(.title)
-                .fontWeight(.bold)
+            HStack {
+                Spacer()
+                Text("Lumen")
+                    .font(.title)
+                    .fontWeight(.bold)
+                Spacer()
+                Circle()
+                    .frame(width: 15, height: 15, alignment: .center)
+                    .padding(.trailing)
+                    .foregroundColor((viewModel.connectionStatus == .connected) ? Color.green : Color.red)
+                    .opacity(0.7)
+            }
+            
             LazyVGrid(columns: [.init(), .init()]) {
-                ForEach(viewModel.actions) {action in
+                ForEach(viewModel.actions) { action in
                     MagicLightButtonView(action: action)
                         .onTapGesture(count: 1, perform: {
                             action.action(action.description)
