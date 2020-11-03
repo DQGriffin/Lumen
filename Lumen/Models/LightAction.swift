@@ -38,6 +38,10 @@ struct LightAction: Identifiable {
         return (r != 0) && (g != 0) && (b != 0)
     }
     
+    var staticIdentifier: String {
+        return "\(title)\(description)\(r)\(g)\(b)\(white)"
+    }
+    
     //------------------TEST--------------------
     init (title: String, description: String, action: @escaping (LightAction) -> Void) {
         self.title = title
