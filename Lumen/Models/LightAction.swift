@@ -93,7 +93,7 @@ struct LightAction: Identifiable {
         }
     }
     
-    func getAdjustedValue(from value: Int) -> Int {
+    fileprivate func getAdjustedValue(from value: Int) -> Int {
         var adjustedValue = value * 255
         adjustedValue = adjustedValue / 100
         return adjustedValue
