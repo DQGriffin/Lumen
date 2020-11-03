@@ -31,8 +31,6 @@ struct ButtonViewOverlay: View {
 
 struct MagicLightButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        MagicLightButtonView(action: LightAction(title: "MagicLight", description: "15%", action: { _ in
-            print("Happy now, Xcode?")
-        }))
+        MagicLightButtonView(action: LightAction(title: "MagicLight", description: "15%"))
     }
 }
