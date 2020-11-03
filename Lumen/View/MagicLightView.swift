@@ -30,7 +30,7 @@ struct MagicLightView: View {
                 ForEach(viewModel.actions) { action in
                     MagicLightButtonView(action: action)
                         .onTapGesture(count: 1, perform: {
-                            action.action(action.description)
+                            action.perform()
                         })
                 }
             }
