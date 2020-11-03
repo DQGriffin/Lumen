@@ -35,7 +35,8 @@ struct LightAction: Identifiable {
     }
     
     var isRGB: Bool {
-        return (r != 0) && (g != 0) && (b != 0)
+        let result = (r == 0) && (g == 0) && (b == 0)
+        return !result
     }
     
     var staticIdentifier: String {
