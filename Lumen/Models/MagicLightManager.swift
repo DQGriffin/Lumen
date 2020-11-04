@@ -180,8 +180,7 @@ extension MagicLightManager: CBPeripheralDelegate {
     func clearAllValues() {
         let zero = Data(bytes: [0], count: 1)
         
-        if let safeBrightness = brightnessCharacteristic, let safeRed = redCharacteristic, let safeGreen = greenCharacteristic, let safeBlue = blueCharacteristic {
-            //peripheral.writeValue(zero, for: safeBrightness, type: CBCharacteristicWriteType.withResponse)
+        if let safeRed = redCharacteristic, let safeGreen = greenCharacteristic, let safeBlue = blueCharacteristic {
             peripheral.writeValue(zero, for: safeRed, type: CBCharacteristicWriteType.withResponse)
             peripheral.writeValue(zero, for: safeGreen, type: CBCharacteristicWriteType.withResponse)
             peripheral.writeValue(zero, for: safeBlue, type: CBCharacteristicWriteType.withResponse)
