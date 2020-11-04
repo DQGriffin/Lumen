@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 struct LightAction: Identifiable {
     var id: Int
@@ -41,6 +42,10 @@ struct LightAction: Identifiable {
     
     var staticIdentifier: String {
         return "\(title)\(description)\(r)\(g)\(b)\(white)"
+    }
+    
+    var rgbColor: Color {
+        return Color(red: Double(r), green: Double(g), blue: Double(b))
     }
     
     //------------------TEST--------------------
