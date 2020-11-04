@@ -26,7 +26,11 @@ class MagicLightViewModel: ObservableObject {
         actions.append(LightAction(title: "Magic Light", description: "30%", white: 30, action: performAction(action:)))
         actions.append(LightAction(title: "Magic Light", description: "60%", white: 60, action: performAction(action:)))
         actions.append(LightAction(title: "Magic Light", description: "100%", white: 100, action: performAction(action:)))
-        actions.append(LightAction(title: "Debug", description: "This is a very long description", action: performAction(action:)))
+        actions.append(LightAction(title: "Magic Light", description: "RGB Red", red: 100, green: 0, blue: 0, action: performAction(action:)))
+        actions.append(LightAction(title: "Magic Light", description: "RGB Green", red: 0, green: 100, blue: 0, action: performAction(action:)))
+        actions.append(LightAction(title: "Magic Light", description: "RGB Blue", red: 0, green: 0, blue: 100, action: performAction(action:)))
+        actions.append(LightAction(title: "Magic Light", description: "RGB Wildcard", red: 137, green: 58, blue: 100, action: performAction(action:)))
+        actions.append(LightAction(title: "Debug", description: "Test", action: performAction(action:)))
         print("Initializer | Active Action Static ID: \(activeActionStaticID)")
         //setActionActive(withID: activeActionID)
         setActionActive(withStaticID: activeActionStaticID)
@@ -49,8 +53,11 @@ class MagicLightViewModel: ObservableObject {
     }
     
     func performAction(action: LightAction) {
+        //magicLightManager.clearAllValues()
+        //testCombined()
         if action.isRGB {
             print("This is an RGB Light Action")
+            performRGBAction(action: action)
         }
         else {
             print("This is not an RGB Light Action")
@@ -59,7 +66,14 @@ class MagicLightViewModel: ObservableObject {
     }
     
     fileprivate func performRGBAction(action: LightAction) {
-        
+        let red = Data(bytes: [action.r], count: 1)
+        let green = Data(bytes: [action.g], count: 1)
+        let blue = Data(bytes: [action.b], count: 1)
+        magicLightManager.setRed(to: red)
+        magicLightManager.setGreen(to: green)
+        magicLightManager.setBlue(to: blue)
+        setActionActive(withID: action.id)
+        activeActionStaticID = action.staticIdentifier
     }
     
     fileprivate func performWhiteAction(action: LightAction) {
@@ -68,9 +82,13 @@ class MagicLightViewModel: ObservableObject {
         let data = Data(bytes: [action.adjustedWhite], count: 1)
         magicLightManager.setBrightness(to: data)
         currentBrightnessValue = action.white
-        clearActiveAction()
         setActionActive(withID: action.id)
         activeActionStaticID = action.staticIdentifier
+    }
+    
+    fileprivate func testCombined() {
+        let data = Data(bytes: [255, 255, 125, 255], count: 4)
+        magicLightManager.setCombined(to: data)
     }
     
     func setBrightness(to targetBrightness: String) {
@@ -102,13 +120,6 @@ class MagicLightViewModel: ObservableObject {
             else {
                 actions[index].isActive = false
             }
-        }
-        objectWillChange.send()
-    }
-    
-    func clearActiveAction() {
-        for index in 0..<actions.count {
-            actions[index].isActive = false
         }
         objectWillChange.send()
     }

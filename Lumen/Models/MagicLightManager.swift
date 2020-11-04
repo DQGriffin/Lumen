@@ -17,6 +17,10 @@ class MagicLightManager: NSObject {
     var peripheral: CBPeripheral!
     var characteristics: [CBCharacteristic] = []
     var brightnessCharacteristic: CBCharacteristic?
+    var redCharacteristic: CBCharacteristic?
+    var greenCharacteristic: CBCharacteristic?
+    var blueCharacteristic: CBCharacteristic?
+    var combinedRGBWCharacteristic: CBCharacteristic?
     var delegate: MagicLightManagerDelegate?
     
     override init() {
@@ -95,6 +99,10 @@ extension MagicLightManager: CBPeripheralDelegate {
         if let serviceCharacteristics = service.characteristics {
             characteristics.append(contentsOf: serviceCharacteristics)
             storeBrightnessCharacteristic()
+            storeRedCharacteristic()
+            storeGreenCharacteristic()
+            storeBlueCharacteristic()
+            storeRGBWCharacteristic()
         }
     }
     
@@ -106,9 +114,82 @@ extension MagicLightManager: CBPeripheralDelegate {
         }
     }
     
+    func storeRedCharacteristic() {
+        for characteristic in characteristics {
+            if characteristic.uuid == CBUUID(string: "FFE6") {
+                redCharacteristic = characteristic
+            }
+        }
+    }
+    
+    func storeGreenCharacteristic() {
+        for characteristic in characteristics {
+            if characteristic.uuid == CBUUID(string: "FFE7") {
+                greenCharacteristic = characteristic
+            }
+        }
+    }
+    
+    func storeBlueCharacteristic() {
+        for characteristic in characteristics {
+            if characteristic.uuid == CBUUID(string: "FFE8") {
+                blueCharacteristic = characteristic
+            }
+        }
+    }
+    
+    func storeRGBWCharacteristic() {
+        for characteristic in characteristics {
+            if characteristic.uuid == CBUUID(string: "FFE9") {
+                combinedRGBWCharacteristic = characteristic
+            }
+        }
+    }
+    
     func setBrightness(to brightness: Data) {
         if let safeBrightnessCharacteristic = brightnessCharacteristic {
+            print("Setting white")
+            clearAllValues()
             peripheral.writeValue(brightness, for: safeBrightnessCharacteristic, type: CBCharacteristicWriteType.withResponse)
+        }
+    }
+    
+    func setRed(to red: Data) {
+        if let safeRedCharacteristic = redCharacteristic {
+            print("Setting red")
+            peripheral.writeValue(red, for: safeRedCharacteristic, type: CBCharacteristicWriteType.withResponse)
+        }
+    }
+    
+    func setGreen(to green: Data) {
+        if let safeGreenCharacteristic = greenCharacteristic {
+            print("Setting green")
+            peripheral.writeValue(green, for: safeGreenCharacteristic, type: CBCharacteristicWriteType.withResponse)
+        }
+    }
+    
+    func setBlue(to blue: Data) {
+        if let safeBlueCharacteristic = blueCharacteristic {
+            print("Setting blue")
+            peripheral.writeValue(blue, for: safeBlueCharacteristic, type: CBCharacteristicWriteType.withResponse)
+        }
+    }
+    
+    func setCombined(to data: Data) {
+        if let safeCombined = combinedRGBWCharacteristic {
+            print("Setting all (combined)")
+            peripheral.writeValue(data, for: safeCombined, type: CBCharacteristicWriteType.withoutResponse)
+        }
+    }
+    
+    func clearAllValues() {
+        let zero = Data(bytes: [0], count: 1)
+        
+        if let safeBrightness = brightnessCharacteristic, let safeRed = redCharacteristic, let safeGreen = greenCharacteristic, let safeBlue = blueCharacteristic {
+            //peripheral.writeValue(zero, for: safeBrightness, type: CBCharacteristicWriteType.withResponse)
+            peripheral.writeValue(zero, for: safeRed, type: CBCharacteristicWriteType.withResponse)
+            peripheral.writeValue(zero, for: safeGreen, type: CBCharacteristicWriteType.withResponse)
+            peripheral.writeValue(zero, for: safeBlue, type: CBCharacteristicWriteType.withResponse)
         }
     }
     
