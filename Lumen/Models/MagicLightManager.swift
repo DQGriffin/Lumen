@@ -148,7 +148,6 @@ extension MagicLightManager: CBPeripheralDelegate {
     
     func setBrightness(to brightness: Data) {
         if let safeBrightnessCharacteristic = brightnessCharacteristic {
-            print("Setting white")
             clearAllValues()
             peripheral.writeValue(brightness, for: safeBrightnessCharacteristic, type: CBCharacteristicWriteType.withResponse)
         }
@@ -156,28 +155,24 @@ extension MagicLightManager: CBPeripheralDelegate {
     
     func setRed(to red: Data) {
         if let safeRedCharacteristic = redCharacteristic {
-            print("Setting red")
             peripheral.writeValue(red, for: safeRedCharacteristic, type: CBCharacteristicWriteType.withResponse)
         }
     }
     
     func setGreen(to green: Data) {
         if let safeGreenCharacteristic = greenCharacteristic {
-            print("Setting green")
             peripheral.writeValue(green, for: safeGreenCharacteristic, type: CBCharacteristicWriteType.withResponse)
         }
     }
     
     func setBlue(to blue: Data) {
         if let safeBlueCharacteristic = blueCharacteristic {
-            print("Setting blue")
             peripheral.writeValue(blue, for: safeBlueCharacteristic, type: CBCharacteristicWriteType.withResponse)
         }
     }
     
     func setCombined(to data: Data) {
         if let safeCombined = combinedRGBWCharacteristic {
-            print("Setting all (combined)")
             peripheral.writeValue(data, for: safeCombined, type: CBCharacteristicWriteType.withoutResponse)
         }
     }

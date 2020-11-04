@@ -56,11 +56,9 @@ class MagicLightViewModel: ObservableObject {
         //magicLightManager.clearAllValues()
         //testCombined()
         if action.isRGB {
-            print("This is an RGB Light Action")
             performRGBAction(action: action)
         }
         else {
-            print("This is not an RGB Light Action")
             performWhiteAction(action: action)
         }
     }
