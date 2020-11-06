@@ -18,7 +18,7 @@ struct MagicLightButtonView: View {
         .groupBoxStyle(DefaultGroupBoxStyle())
         .contextMenu {
             Button(action: {
-                self.isPresentingEditor.toggle()
+                self.isPresentingEditor = true
             }) {
                 Label("Inspect", systemImage: "magnifyingglass")
             }
