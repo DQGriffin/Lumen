@@ -14,65 +14,84 @@ struct LightActionEditorView: View {
     
     var body: some View {
         VStack {
-            HStack {
-                Text("Inspect")
-                    .font(.title)
-                    .fontWeight(.bold)
-                Spacer()
-                Button(action: {isPresented.toggle()}) {
-                    Text("Done")
-                        .foregroundColor(.blue)
-                        .padding()
-                }
-                .cornerRadius(4)
-                .border(Color.blue, width: 2)
-            }
-            .padding()
-            VStack {
-                HStack {
-                    Text("Title: ")
-                        .font(.title)
-                    Spacer()
-                    Text(action.title)
-                }
-                .padding(.horizontal)
-                HStack {
-                    Text("Description: ")
-                        .font(.title)
-                    Spacer()
-                    Text(action.description)
-                }
-                .padding(.horizontal)
-                HStack {
-                    Text("Red: ")
-                        .font(.title)
-                    Spacer()
-                    Text("\(action.r)")
-                }
-                .padding(.horizontal)
-                HStack {
-                    Text("Green: ")
-                        .font(.title)
-                    Spacer()
-                    Text("\(action.g)")
-                }
-                .padding(.horizontal)
-                HStack {
-                    Text("Blue: ")
-                        .font(.title)
-                    Spacer()
-                    Text("\(action.b)")
-                }
-                .padding(.horizontal)
-                HStack {
-                    Text("White: ")
-                        .font(.title)
-                    Spacer()
-                    Text("\(action.white)")
-                }
-                .padding(.horizontal)
-            }
+            TitleBarView(isPresented: $isPresented)
+            LightActionDetailsView(action: action)
             Spacer()
+        }
+    }
+}
+
+struct TitleBarView: View {
+    
+    @Binding var isPresented: Bool
+    
+    var body: some View {
+        HStack {
+            Text("Inspect")
+                .font(.title)
+                .fontWeight(.bold)
+            Spacer()
+            Button(action: {
+                isPresented = false
+                
+            }) {
+                Text("Done")
+                    .foregroundColor(.blue)
+                    .padding()
+            }
+        }
+        .padding()
+    }
+}
+
+struct LightActionDetailsView: View {
+    
+    let action: LightAction
+    
+    var body: some View {
+        VStack {
+            HStack {
+                Text("Title: ")
+                    .font(.title)
+                Spacer()
+                Text(action.title)
+            }
+            .padding(.horizontal)
+            HStack {
+                Text("Description: ")
+                    .font(.title)
+                Spacer()
+                Text(action.description)
+            }
+            .padding(.horizontal)
+            HStack {
+                Text("Red: ")
+                    .font(.title)
+                Spacer()
+                Text("\(action.r)")
+            }
+            .padding(.horizontal)
+            HStack {
+                Text("Green: ")
+                    .font(.title)
+                Spacer()
+                Text("\(action.g)")
+            }
+            .padding(.horizontal)
+            HStack {
+                Text("Blue: ")
+                    .font(.title)
+                Spacer()
+                Text("\(action.b)")
+            }
+            .padding(.horizontal)
+            HStack {
+                Text("White: ")
+                    .font(.title)
+                Spacer()
+                Text("\(action.white)")
+            }
+            .padding(.horizontal)
         }
     }
 }
