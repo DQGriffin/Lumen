@@ -10,6 +10,7 @@ import SwiftUI
 struct LightActionEditorView: View {
     
     var action: LightAction
+    @Binding var isPresented: Bool
     
     var body: some View {
         VStack {
@@ -18,7 +19,7 @@ struct LightActionEditorView: View {
                     .font(.title)
                     .fontWeight(.bold)
                 Spacer()
-                Button(action: {}) {
+                Button(action: {isPresented.toggle()}) {
                     Text("Done")
                         .foregroundColor(.blue)
                         .padding()
@@ -79,8 +80,8 @@ struct LightActionEditorView: View {
 
 struct LightActionEditorView_Previews: PreviewProvider {
     static var previews: some View {
-        var action = LightAction(title: "Magic Light", description: "RGB Blue", red: 0, green: 0, blue: 255, action: previewTestFunction(action:))
-        LightActionEditorView(action: action)
+        let action = LightAction(title: "Magic Light", description: "RGB Blue", red: 0, green: 0, blue: 255, action: previewTestFunction(action:))
+        LightActionEditorView(action: action, isPresented: .constant(false))
         //        LightActionEditorView(action: nil)
     }
     
