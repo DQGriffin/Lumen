@@ -15,6 +15,11 @@ struct MagicLightButtonView: View {
             Text(action.description)
         }
         .groupBoxStyle(DefaultGroupBoxStyle())
+        .contextMenu {
+            Button(action: {}) {
+                Label("Inspect", systemImage: "magnifyingglass")
+            }
+        }
         .overlay(action.isRGB ? ButtonViewOverlay(color: action.rgbColor, opacity: 0.004) : nil)
         .overlay(action.isActive ? ButtonViewOverlay(color: .blue, opacity: 0.2) : nil)
         .animation(.easeInOut(duration: 0.1))
