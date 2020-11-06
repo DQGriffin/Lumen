@@ -10,7 +10,7 @@ import SwiftUI
 
 struct LightAction: Identifiable {
     var id: Int
-    let title: String
+    var title: String
     let description: String
     var action: ((LightAction) -> Void)?
     var isActive = false
