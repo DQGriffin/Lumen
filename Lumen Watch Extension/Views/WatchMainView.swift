@@ -12,7 +12,13 @@ struct WatchMainView: View {
     @StateObject var viewModel = MagicLightViewModel()
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ScrollView {
+            LazyVGrid(columns: [.init(), .init()]) {
+                ForEach(viewModel.actions) { action in
+                    LightActionButtonView(action: action)
+                }
+            }
+        }
     }
 }
 
