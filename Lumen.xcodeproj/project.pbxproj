@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8524EE60255792D700B5B169 /* MagicLightViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8535E130254B925100DA98BE /* MagicLightViewModel.swift */; };
+		8524EE672557931500B5B169 /* WatchMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8524EE662557931500B5B169 /* WatchMainView.swift */; };
 		8535E11D254B84D700DA98BE /* MagicLight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8535E11C254B84D700DA98BE /* MagicLight.swift */; };
 		8535E122254B85D900DA98BE /* MagicLightManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8535E121254B85D900DA98BE /* MagicLightManager.swift */; };
 		8535E127254B893200DA98BE /* MagicLightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8535E126254B893200DA98BE /* MagicLightView.swift */; };
@@ -93,6 +95,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8524EE662557931500B5B169 /* WatchMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchMainView.swift; sourceTree = "<group>"; };
 		8535E11C254B84D700DA98BE /* MagicLight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicLight.swift; sourceTree = "<group>"; };
 		8535E121254B85D900DA98BE /* MagicLightManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicLightManager.swift; sourceTree = "<group>"; };
 		8535E126254B893200DA98BE /* MagicLightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicLightView.swift; sourceTree = "<group>"; };
@@ -245,6 +248,7 @@
 			isa = PBXGroup;
 			children = (
 				85CFD4222557892200FD6DF1 /* LightActionButtonView.swift */,
+				8524EE662557931500B5B169 /* WatchMainView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -513,8 +517,10 @@
 			files = (
 				85CFD3EC2557865C00FD6DF1 /* NotificationController.swift in Sources */,
 				85CFD3EA2557865C00FD6DF1 /* ContentView.swift in Sources */,
+				8524EE60255792D700B5B169 /* MagicLightViewModel.swift in Sources */,
 				85CFD3F02557865C00FD6DF1 /* ComplicationController.swift in Sources */,
 				85CFD4232557892200FD6DF1 /* LightActionButtonView.swift in Sources */,
+				8524EE672557931500B5B169 /* WatchMainView.swift in Sources */,
 				85CFD419255787F100FD6DF1 /* MagicLightManager.swift in Sources */,
 				85CFD3E82557865C00FD6DF1 /* LumenApp.swift in Sources */,
 				85CFD4132557870D00FD6DF1 /* LightAction.swift in Sources */,
