@@ -11,7 +11,9 @@ struct LightActionButtonView: View {
     let action: LightAction
     
     var body: some View {
-        Button(action: {}) {
+        Button(action: {
+            action.perform()
+        }) {
             Text(action.description)
         }
     }
