@@ -15,6 +15,7 @@ struct LightActionButtonView: View {
             action.perform()
         }) {
             Text(action.description)
+                .foregroundColor(action.isActive ? .blue : .primary)
         }
     }
 }
