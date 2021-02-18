@@ -16,6 +16,7 @@
 		8535E131254B925100DA98BE /* MagicLightViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8535E130254B925100DA98BE /* MagicLightViewModel.swift */; };
 		8535E136254B931900DA98BE /* LightAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8535E135254B931900DA98BE /* LightAction.swift */; };
 		857E48162555A6E8006BBBDB /* LightActionEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857E48152555A6E8006BBBDB /* LightActionEditorView.swift */; };
+		85868161255E2C8A00A436B9 /* MagicLightManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8535E121254B85D900DA98BE /* MagicLightManager.swift */; };
 		85CFD3DC2557865C00FD6DF1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85CFD3DB2557865C00FD6DF1 /* Assets.xcassets */; };
 		85CFD3E32557865C00FD6DF1 /* Lumen Watch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 85CFD3E22557865C00FD6DF1 /* Lumen Watch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		85CFD3E82557865C00FD6DF1 /* LumenApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CFD3E72557865C00FD6DF1 /* LumenApp.swift */; };
@@ -27,7 +28,6 @@
 		85CFD3F52557865D00FD6DF1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85CFD3F42557865D00FD6DF1 /* Preview Assets.xcassets */; };
 		85CFD3FA2557865D00FD6DF1 /* Lumen Watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 85CFD3D92557865B00FD6DF1 /* Lumen Watch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		85CFD4132557870D00FD6DF1 /* LightAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8535E135254B931900DA98BE /* LightAction.swift */; };
-		85CFD419255787F100FD6DF1 /* MagicLightManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8535E121254B85D900DA98BE /* MagicLightManager.swift */; };
 		85CFD4232557892200FD6DF1 /* LightActionButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CFD4222557892200FD6DF1 /* LightActionButtonView.swift */; };
 		85F9E8DF25435EB500D01C6E /* LumenApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F9E8DE25435EB500D01C6E /* LumenApp.swift */; };
 		85F9E8E325435EB600D01C6E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85F9E8E225435EB600D01C6E /* Assets.xcassets */; };
@@ -521,9 +521,9 @@
 				85CFD3F02557865C00FD6DF1 /* ComplicationController.swift in Sources */,
 				85CFD4232557892200FD6DF1 /* LightActionButtonView.swift in Sources */,
 				8524EE672557931500B5B169 /* WatchMainView.swift in Sources */,
-				85CFD419255787F100FD6DF1 /* MagicLightManager.swift in Sources */,
 				85CFD3E82557865C00FD6DF1 /* LumenApp.swift in Sources */,
 				85CFD4132557870D00FD6DF1 /* LightAction.swift in Sources */,
+				85868161255E2C8A00A436B9 /* MagicLightManager.swift in Sources */,
 				85CFD3EE2557865C00FD6DF1 /* NotificationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
