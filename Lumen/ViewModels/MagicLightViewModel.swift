@@ -36,6 +36,10 @@ class MagicLightViewModel: ObservableObject {
         setActionActive(withStaticID: activeActionStaticID)
     }
     
+    func attemptToConnect() {
+        magicLightManager.scanForPeripheral(withName: magicLightManager.targetPeripheralName)
+    }
+    
     func performAction(withID id: Int) {
         
         var selectedAction: LightAction?
